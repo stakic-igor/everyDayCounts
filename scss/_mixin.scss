@@ -1,0 +1,59 @@
+@mixin element($element) {
+  &__#{$element}{
+    @content;
+  }
+}
+@mixin modify($modify) {
+  &--#{$modify}{
+    @content;
+  }
+}
+
+/*position mixin*/
+@mixin position($pos, $top: null, $left: null, $bottom: null, $right: null) {
+  position: $pos;
+  top: $top;
+  left: $left;
+  bottom: $bottom;
+  right: $right;
+}
+
+/*background image*/
+/*path*/
+$path: "../assets";
+@mixin background-img($image, $position: null null, $size: null null, $repeat: null, $origin: null, $clip: null, $attachment: null, $color: null) {
+  background-image: url('#{$path}/#{$image}');
+  background-position: $position;
+  background-size: $size;
+  background-repeat: $repeat;
+  background-origin: $origin;
+  background-clip: $clip;
+  background-attachment: $attachment;
+  background-color: $color;
+}
+/*text shadow*/
+
+@mixin text-shadow($hOffset, $vOffset, $blur, $color) {
+    text-shadow: $hOffset $vOffset $blur $color;
+}
+
+//placeholder mixin
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}

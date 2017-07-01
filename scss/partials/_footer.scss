@@ -1,0 +1,83 @@
+.footer{
+  border-top: 1px solid #dddad6;
+  padding: 2em 0 2.5em 0;
+  @include element('list'){
+    list-style: none;
+    @include element('link'){
+      color: #002d47;
+      font-weight: lighter;
+      font-size: 14px;
+      text-decoration: none;
+      &:hover,
+      &:focus{
+        color: #000;
+        font-weight: bold;
+      }
+    }
+    @include element('item'){
+      margin: 8px 0;
+    }
+  }
+  @include element('address'){
+    text-align: center;
+    & img, & p{
+      margin-bottom: .750em;
+    }
+  }
+}
+.post-footer{
+  background-color: #002d47;
+  line-height: 50px;
+  & p{
+    color: #fff;
+    font-size: 11px;
+    font-weight: lighter;
+  }
+}
+.social{
+  text-align: right;
+  @include element('icon'){
+    display: inline-block;
+    height: 22px;
+    overflow: hidden;
+    margin-left: 16px;
+    vertical-align: middle;
+    width: 22px;
+    @include modify('facebook'){
+      @include background-img('social-sprite.png', $position: 0px 22px );
+      &:hover{
+        background-position: 0px 0px;
+      }
+    }
+    @include modify('youtube'){
+      @include background-img('social-sprite.png', $position: 110px 22px );
+      &:hover{
+        background-position: -22px 0px;
+      }
+    }
+    @include modify('pin'){
+      @include background-img('social-sprite.png', $position: 88px 22px );
+      &:hover{
+        background-position: -44px 0px;
+      }
+    }
+    @include modify('instagram'){
+      @include background-img('social-sprite.png', $position: 66px 22px );
+      &:hover{
+        background-position: -66px 0px;
+      }
+    }
+    @include modify('twitter'){
+      @include background-img('social-sprite.png', $position: 44px 22px );
+      &:hover{
+        background-position: -88px 0px;
+      }
+    }
+    @include modify('google'){
+      @include background-img('social-sprite.png', $position: 22px 22px );
+      &:hover{
+        background-position: -110px 0px;
+      }
+    }
+  }
+}

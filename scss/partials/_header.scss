@@ -1,0 +1,120 @@
+.header{
+  border-bottom: 1px solid #dddad6;
+  margin-bottom: 3em;
+  padding: 2em 0;
+  @include element('title'){
+    color: #002d47;
+    font-size: 33px;
+    font-weight: normal;
+    margin-bottom: 1em;
+    text-align: center;
+  }
+}
+.login{
+  box-sizing: border-box;
+  padding-top: 18px;
+  @include element('links'){
+    color: #002d47;
+    font-size: 13px;
+    font-weight: lighter;
+    height: 100px;
+    text-decoration: none;
+    margin-right: 2em;
+    &:hover{
+      color: #000;
+    }
+  }
+}
+.nav__main{
+  list-style: none;
+  text-align: center;
+  @include element('item'){
+    display: inline;
+    margin: 0 1.15em;
+  }
+  @include element('link'){
+    color: #002d47;
+    font-size: 18px;
+    font-weight: lighter;
+    text-decoration: none;
+    @include position(relative);
+    &:hover{
+      color: #002d47;
+    }
+    &:hover:after{
+      border-style: solid;
+      border-width: 0 0 2px;
+      color: #002d47;
+      content: '';
+      width: 100%;
+      @include position(absolute, $bottom: -3px, $left: 0);
+    }
+  }
+}
+.go-to-cart{
+  box-sizing: border-box;
+  height:75px;
+  padding-top: 18px;
+  text-align: right;
+  @include element('link'){
+    color: #002d47;
+    font-size: 13px;
+    font-weight: lighter;
+    margin-left: 2em;
+    text-decoration: none;
+    & img{
+      margin-right: 1em;
+    }
+    &:hover{
+      color: #000;
+    }
+  }
+}
+.search{
+  text-align: right;
+  @include element('link'){
+    color: #002d47;
+    font-size: 13px;
+    font-weight: lighter;
+    text-decoration: none;
+    & img{
+      margin-right: 1em;
+      vertical-align: middle;
+    }
+  }
+}
+
+.search-submenu{
+  background-color: #fff;
+  list-style: none;
+  overflow: hidden;
+  max-height: 0;
+  transition: all 320ms ease-in;
+}
+.breadcrumbs{
+  padding: .750em 0;
+  width: 100%;
+  @include element('list'){
+    list-style: none;
+    @include element('item'){
+      display: inline-block;
+    }
+  }
+  @include element('separator'){
+    color: #002d47;
+  }
+  @include element('link'){
+    color: #002d47;
+    font-size: 13px;
+    font-weight: normal;
+    text-decoration: none;
+    & img{
+      height: 100%;
+      width: 14px;
+    }
+    &:hover,
+    &:focus{
+      color: #000;
+    }
+  }
+}

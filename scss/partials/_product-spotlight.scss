@@ -1,0 +1,58 @@
+.product-spotlight{
+  margin: 2em 0;
+  @include element('img'){
+    display: block;
+    margin: 1em auto 1em auto;
+  }
+  @include element('title'){
+    color: #002d47;
+    font-weight: lighter;
+    font-size: 13px;
+    text-align: center;
+  }
+  @include element('price'){
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    @include modify('reg'){
+      color:#002d47;
+      vertical-align: middle;
+    }
+    @include modify('old'){
+      color: #002d47;
+      font-size: 14px;
+      text-decoration: line-through;
+      vertical-align: middle;
+      margin-right: 1em;
+    }
+    @include modify('new'){
+      color:#e6535d;
+      vertical-align: middle;
+    }
+  }
+  @include element('option'){
+    text-align: center;
+    @include element('choose'){
+      border-radius: 50%;
+      display: inline-block;
+      height: 9px;
+      width:9px;
+      padding: 1px;
+      background: black;
+      background-clip: content-box;
+      vertical-align: middle;
+      &:hover{
+        border: 1px solid #000;
+      }
+      @include modify('opt1'){
+        background-color: #000;
+      }
+      @include modify('opt2'){
+        background-color: #4082a7;
+      }
+      @include modify('opt3'){
+        background-color: #6baf6b
+      }
+    }
+  }
+}

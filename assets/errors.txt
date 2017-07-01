@@ -1,0 +1,1 @@
+[Mon Aug 03 2015 13:13:20 GMT+0200 (Central Europe Daylight Time)] layer "3.Paragraph header": Expected end of input but "h" found.

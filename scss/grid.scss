@@ -1,0 +1,38 @@
+//base settings
+$gutter: 16px;
+
+
+//super simple grid
+.row{
+  font-size: 0;
+}
+
+$col-: col !default;
+
+@for $i from 12 through 1{
+  .#{$col-}-#{$i}{
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 16px;
+    padding-left: $gutter;
+    padding-right: $gutter;
+    vertical-align: top;
+    width: percentage($i / 12);
+    &.no-gutter{
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+@media screen and (max-device-width: 768px) {
+  $col-list: null;
+  @for $i from 12 through 1{
+    .#{$col-}-#{$i}{
+    $col-list: append($col-list, unquote(".#{$col-}-#{$i}"), comma);
+    }
+  }
+  #{$col-list} {
+    width: 100%;
+  }
+}

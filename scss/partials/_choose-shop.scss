@@ -1,0 +1,30 @@
+.choose-shop{
+  line-height: 500px;
+  text-align: center;
+  margin: 3em 0;
+  &:after{
+    content: '';
+    clear: both;
+    display: table;
+  }
+  @include element('woman'){
+    @include background-img('shop_woman.jpg', $position: center top, $size: 100% auto, $repeat: no-repeat);
+    &:hover .choose-shop__link{
+      color: darken(#fff, 10%);
+    }
+  }
+  @include element('man'){
+    @include background-img('shop_men.jpg', $position: center top, $size: 100% auto, $repeat: no-repeat);
+    &:hover .choose-shop__link{
+      color: darken(#fff, 10%);
+    }
+  }
+  @include element('link'){
+    color: #fff;
+    font-weight: normal;
+    font-size: 50px;
+    text-decoration: none;
+    text-transform: lowercase;
+    @include text-shadow(1px, 1px, 10px, rgba(0, 0, 0, 0.2));
+  }
+}

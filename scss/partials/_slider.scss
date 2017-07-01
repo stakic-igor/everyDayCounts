@@ -1,0 +1,72 @@
+.slider{
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  @include position(relative);
+  @include element('img'){
+    height: auto;
+    width: 100%;
+  }
+  // ctrl element
+  @include element('ctrl'){
+    background: #002d47;
+    cursor: pointer;
+    display: block;
+    height: 50px;
+    width: 34px;
+    @include modify('left'){
+      @include background-img('l_arr.png', $position: center, $repeat: no-repeat);
+      transition: left 320ms ease-in;
+      transform: translateY(-50%);
+      @include position(absolute, $top: 50%, $left: -34px);
+      &:hover,
+      &:focus{
+        background-color: #001d2d;
+      }
+    }
+    @include modify('right'){
+      @include background-img('r_arr.png', $position: center, $repeat: no-repeat);
+      transition: right 320ms ease-in;
+      transform: translateY(-50%);
+      @include position(absolute, $top: 50%, $right: -34px);
+      &:hover,
+      &:focus{
+        background-color: #001d2d;
+      }
+    }
+  }
+  @include element('msg'){
+    text-align: center;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    opacity: 0;
+    transition: opacity 320ms ease-in;
+    @include element('title'){
+      color: #fcfbf9;
+      font-weight: bold;
+      font-size: 110px;
+      text-transform: uppercase;
+      line-height: 1;
+      @include text-shadow(0px, 1px, 10px, rgba(0, 0, 0, 0.2));
+    }
+    @include element('blurb'){
+      color: #fff;
+      font-weight: lighter;
+      font-size: 25px;
+      text-transform: uppercase;
+      @include text-shadow(0px, 1px, 8px, rgba(0, 0, 0, 0.2));
+    }
+    @include position(absolute, $top: 50%, $left: 50%);
+  }
+  &:hover .slider__ctrl--right,
+  &:focus .slider__ctrl--right{
+    right: 0;
+  }
+  &:hover .slider__ctrl--left,
+  &:focus .slider__ctrl--left{
+    left: 0;
+  }
+  &:hover .slider__msg{
+    opacity: 1;
+  }
+}

@@ -1,0 +1,31 @@
+.btn{
+  border: 0;
+  background-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  @include modify('block'){
+    background-color: #002d47;
+    color: #fff;
+    padding: 12px;
+    &:hover{
+      background-color: #001d2d;
+    }
+    &:focus{
+      background-color: #002d47;
+    }
+  }
+  @include modify('icon'){
+    & img{
+      padding-right: 1em;
+      vertical-align: bottom;
+    }
+  }
+  @include modify('stripped'){
+    color: #002d47;
+  }
+}
